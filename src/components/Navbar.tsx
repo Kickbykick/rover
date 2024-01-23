@@ -6,9 +6,9 @@ export default function Navbar() {
         <nav className='sticky inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
             <Link
                 href='/'
-                className='flex z-40 font-semibold'>
+                className='flex z-40 sm:pl-24 font-semibold'>
                 <Image
-                    src='/images/Rover-wa-Quatre.png'
+                    src='/images/logo.png'
                     alt='Rover wa qautre'
                     width={300}
                     height={300}

@@ -20,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`min-h-screen bg-white font-sans ${rhodiumLibre.className}`}>
-        <TopBanner/>
+        {/* <TopBanner/> */}
+        <Navbar />
         <main>{children}</main>
         <Toaster />
       </body>

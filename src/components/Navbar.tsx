@@ -10,8 +10,8 @@ export default function Navbar() {
                 <Image
                     src='/images/logo.png'
                     alt='Rover wa qautre'
-                    width={300}
-                    height={300}
+                    width={100}
+                    height={100}
                     quality={100}
                 />
             </Link>

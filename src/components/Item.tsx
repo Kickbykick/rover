@@ -7,8 +7,8 @@ export default function Items({image} : {image?:string}) {
             src={`/images/${image}`}
             alt='Rover wa qautre'
             className="rover_image"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             quality={100}
         />
     )

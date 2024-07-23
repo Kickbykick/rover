@@ -44,7 +44,7 @@ const DropListPage = () => {
     };
 
     return (
-        <main className="flex flex-col md:flex-row max-h-screen m-auto max-w-screen justify-between items-center">
+        <section id="newsletter" className="flex flex-col md:flex-row max-h-screen m-auto max-w-screen justify-between items-center">
             <div className='hidden md:block w-[30%] h-[97vh]'>
                 <Image
                     src='/model_1.JPG'
@@ -106,7 +106,7 @@ const DropListPage = () => {
                     priority={true}
                 />
             </div>
-        </main>
+        </section>
     )
 }
 

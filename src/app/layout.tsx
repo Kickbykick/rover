@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Rhodium_Libre } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import TopBanner from "@/components/TopBanner";
 import { Toaster } from "@/components/ui/toaster";
 
-const rhodiumLibre = Rhodium_Libre({weight: "400", subsets: ["latin"]});
+const roboto = Roboto({weight: "300", subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Rover",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`min-h-screen bg-white font-sans ${rhodiumLibre.className}`}>
+      <body className={`min-h-screen bg-white font-sans ${roboto.className}`}>
         {/* <TopBanner/> */}
         <Navbar />
         <main>{children}</main>

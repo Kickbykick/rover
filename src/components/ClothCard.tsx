@@ -66,23 +66,23 @@ export default function ClothCard({clothItem, className} : {className?:string, c
                 </div>
             )}
             
-            <div className="col">
-                <div className="flex flex-row text-2xl w-full justify-between mb-3">
-                    <p className="font-semibold">
+            <div className="col mt-2">
+                <div className="flex flex-row text-2xl w-full justify-between mb-2">
+                    <p className="font-bold">
                         {clothItem.name}
                     </p>
                     <p className="border-b-2 border-red-600 ">
-                        {clothItem.amount}
+                        ${clothItem.amount}.00
                     </p>
                 </div>
 
                 <div className="flex flex-row w-full justify-between">
-                    <div className="space-x-1 space-y-2">
+                    <div className="space-x-1">
                         {clothItem.sizes.map((size, index) => (
                             <Button
                                 key={index}
                                 variant="outline"
-                                className={`w-10 ${isItemSelected?.size === size ? 'bg-gray-200' : 'transparent'}`}
+                                className={`w-10 font-light	${isItemSelected?.size === size ? 'bg-gray-200' : 'transparent'}`}
                                 aria-label="Toggle size"
                                 onClick={() => handleToggleClick(size)}
                             >

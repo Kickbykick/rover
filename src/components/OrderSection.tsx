@@ -24,8 +24,12 @@ import { useUserStore } from "@/lib/store";
 import { provinces } from "@/config/data";
 import OrderDisplay from "./OrderDisplay";
 import { Separator } from "./ui/separator";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({weight: "700", subsets: ["latin", "latin-ext"]});
 
 export default function OrderSection({className}:{className?: string}) {
+
     const {
         register,
         handleSubmit,
@@ -79,7 +83,7 @@ export default function OrderSection({className}:{className?: string}) {
                 <div className="grid gap-6 items-center">
                     <div className="flex flex-col justify-center space-y-4 text-center">
                         <div className="">
-                            <h1 className="break-all text-3xl font-bold tracking-tighter min-h-[5rem] sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-500">
+                            <h1 className={`break-all text-3xl ${roboto.className} font-bold min-h-[5rem] sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-500`}>
                                 Proceed To Submit Order
                             </h1>
                             <p className="max-w-[600px] text-black-200 md:text-xl mx-auto">

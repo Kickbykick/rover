@@ -35,6 +35,10 @@ export default function OrderDisplay() {
         <p className='text-2xl'>Total:</p>
         <p className='text-2xl'>${userInfo.total}</p>
       </div>
+
+      <p className='text-red-600 italic font-normal mb-4'>
+        *Shipping and transaction fees will be included in payment invoice sent to your email. Thank you!!!
+      </p>
     </div>
   )
 }

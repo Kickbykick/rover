@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import TopBanner from "@/components/TopBanner";
 import { Toaster } from "@/components/ui/toaster";
 
-const roboto = Roboto({weight: "300", subsets: ["latin"]});
+const roboto = Roboto({weight: "300", subsets: ["latin", "latin-ext"]});
 
 export const metadata: Metadata = {
   title: "Rover",

@@ -7,6 +7,9 @@ import { Toggle } from "./ui/toggle";
 import { useUserStore } from "@/lib/store";
 import { Button } from "./ui/button";
 import React, { useState } from 'react';
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({weight: "500", subsets: ["latin", "latin-ext"]});
 
 export default function ClothCard({clothItem, className} : {className?:string, clothItem: ClothItem}) {
     const { addClothItem, toggleSize, userInfo, incrementQuantity, decrementQuantity } = useUserStore();
@@ -62,13 +65,13 @@ export default function ClothCard({clothItem, className} : {className?:string, c
 
             {isItemSelected && (
                 <div className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
-                {clothItem.amount}
+                    {clothItem.amount}
                 </div>
             )}
             
             <div className="col mt-2">
-                <div className="flex flex-row text-2xl w-full justify-between mb-2">
-                    <p className="font-bold">
+                <div className="flex flex-row text-[1.2rem] w-full justify-between mb-2">
+                    <p className={`${roboto.className}`}>
                         {clothItem.name}
                     </p>
                     <p className="border-b-2 border-red-600 ">
@@ -82,7 +85,7 @@ export default function ClothCard({clothItem, className} : {className?:string, c
                             <Button
                                 key={index}
                                 variant="outline"
-                                className={`w-10 font-light	${isItemSelected?.size === size ? 'bg-gray-200' : 'transparent'}`}
+                                className={`w-6 h-8 font-light	${isItemSelected?.size === size ? 'bg-gray-200' : 'transparent'}`}
                                 aria-label="Toggle size"
                                 onClick={() => handleToggleClick(size)}
                             >
@@ -93,13 +96,21 @@ export default function ClothCard({clothItem, className} : {className?:string, c
 
                     {isItemSelected &&
                         <div className="flex flex-row space-x-4 items-center">
-                            <Button variant="secondary" onClick={() => decrementQuantity(isItemSelected.id)}>
+                            <Button 
+                                className="w-6 h-8"
+                                variant="secondary"
+                                onClick={() => decrementQuantity(isItemSelected.id)}
+                            >
                                 -
                             </Button>
                             
                             <p className="font-semibold">{isItemSelected.quantity}</p>
                             
-                            <Button variant="secondary" onClick={() => incrementQuantity(isItemSelected.id)}>
+                            <Button 
+                                className="w-6 h-8"
+                                variant="secondary" 
+                                onClick={() => incrementQuantity(isItemSelected.id)}
+                            >
                                 +
                             </Button>
                         </div>

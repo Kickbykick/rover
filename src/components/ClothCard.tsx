@@ -83,7 +83,7 @@ export default function ClothCard({clothItem, className} : {className?:string, c
                 <Button
                     type="button"
                     variant="outline"
-                    className="absolute bottom-[10%] left-2 z-10 px-2 py-1 text-md w-[18] font-semibold bg-gray-100"
+                    className="absolute bottom-[11.75%] right-4 z-10 px-2 py-1 text-md w-[18] font-semibold bg-transparent"
                     aria-label="Flip image"
                     onClick={() => setIsHovered((prev) => !prev)}
                 >

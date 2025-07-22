@@ -62,7 +62,7 @@ export const clothItems: ClothItem[] = [
     image: "1984_Hat_Front.png",
     backImage: "1984_Hat_Back.png",
     name: "1984 Hat",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["One Size"],
     amount: 40.00,
   },
   {

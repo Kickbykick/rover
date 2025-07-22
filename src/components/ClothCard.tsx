@@ -53,39 +53,43 @@ export default function ClothCard({clothItem, className} : {className?:string, c
             className={className}
             style={{ position: 'relative' }}
         >
-            {/* Flip Button only on mobile */}
-            <Button
-                type="button"
-                variant="outline"
-                className="absolute top-2 left-2 z-10 px-2 py-1 text-md w-[18] font-semibold bg-gray-100"
-                aria-label="Flip image"
-                onClick={() => setIsHovered((prev) => !prev)}
-            >
-                Flip
-            </Button>
-            {isHovering ? (
-                <Image
-                    src={`/images/${clothItem.backImage}`}
-                    alt={clothItem.name}
-                    className="rover_image rounded-lg"
-                    width={400}
-                    height={400}
-                    quality={100}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                />
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+                {isHovering ? (
+                    <Image
+                        src={`/images/${clothItem.backImage}`}
+                        alt={clothItem.name}
+                        className="rover_image rounded-lg"
+                        width={400}
+                        height={400}
+                        quality={100}
+                        onMouseEnter={onMouseEnter}
+                        onMouseLeave={onMouseLeave}
+                        onClick={() => setIsHovered((prev) => !prev)}
+                    />
                 ) : (
                     <Image
-                    src={`/images/${clothItem.image}`}
-                    alt={clothItem.name}
-                    className={`rover_image rounded-lg transition-opacity duration-500`}
-                    width={400}
-                    height={400}
-                    quality={100}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                />
-            )}
+                        src={`/images/${clothItem.image}`}
+                        alt={clothItem.name}
+                        className={`rover_image rounded-lg transition-opacity duration-500`}
+                        width={400}
+                        height={400}
+                        quality={100}
+                        onMouseEnter={onMouseEnter}
+                        onMouseLeave={onMouseLeave}
+                        onClick={() => setIsHovered((prev) => !prev)}
+                    />
+                )}
+                
+                <Button
+                    type="button"
+                    variant="outline"
+                    className="absolute bottom-[10%] left-2 z-10 px-2 py-1 text-md w-[18] font-semibold bg-gray-100"
+                    aria-label="Flip image"
+                    onClick={() => setIsHovered((prev) => !prev)}
+                >
+                    {'< >'}
+                </Button>
+            </div>
             
             <div className="col mt-2">
                 <div className="flex flex-row text-[1.2rem] w-full justify-between mb-2">
@@ -103,7 +107,7 @@ export default function ClothCard({clothItem, className} : {className?:string, c
                             <Button
                                 key={index}
                                 variant="outline"
-                                className={`w-6 h-8 font-light	${isItemSelected?.size === size ? 'bg-gray-200' : 'transparent'}`}
+                                className={`${clothItem.sizes.length <= 1 ? 'w-18' : 'w-6'} h-8 font-light	${isItemSelected?.size === size ? 'bg-gray-200' : 'transparent'}`}
                                 aria-label="Toggle size"
                                 onClick={() => handleToggleClick(size)}
                             >

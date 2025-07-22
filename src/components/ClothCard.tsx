@@ -6,7 +6,7 @@ import { ClothItem } from "@/config/data";
 import { Toggle } from "./ui/toggle";
 import { useUserStore } from "@/lib/store";
 import { Button } from "./ui/button";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({weight: "500", subsets: ["latin", "latin-ext"]});
@@ -31,13 +31,38 @@ export default function ClothCard({clothItem, className} : {className?:string, c
     };
 
     const [isHovering, setIsHovered] = useState(false);
-    const onMouseEnter = () => setIsHovered(true);
-    const onMouseLeave = () => setIsHovered(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        // Simple check: consider mobile if width <= 768px
+        const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const onMouseEnter = () => {
+        if (!isMobile) setIsHovered(true);
+    };
+    const onMouseLeave = () => {
+        if (!isMobile) setIsHovered(false);
+    };
 
     return (
         <div 
             className={className}
+            style={{ position: 'relative' }}
         >
+            {/* Flip Button only on mobile */}
+            <Button
+                type="button"
+                variant="outline"
+                className="absolute top-2 left-2 z-10 px-2 py-1 text-md w-[18] font-semibold bg-gray-100"
+                aria-label="Flip image"
+                onClick={() => setIsHovered((prev) => !prev)}
+            >
+                Flip
+            </Button>
             {isHovering ? (
                 <Image
                     src={`/images/${clothItem.backImage}`}
@@ -60,13 +85,6 @@ export default function ClothCard({clothItem, className} : {className?:string, c
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                 />
-            )}
-
-
-            {isItemSelected && (
-                <div className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
-                    {clothItem.amount}
-                </div>
             )}
             
             <div className="col mt-2">

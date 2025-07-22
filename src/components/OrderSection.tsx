@@ -65,7 +65,7 @@ export default function OrderSection({className}:{className?: string}) {
         });
     
         if(response.status == 200) {
-            toast.info('Thank you for ordering. We will get intouch soon.');
+            toast.info('Thank you for ordering. We will get intouch soon on the next steps.');
             reset();
             resetSelectedClothes();
         } else if(response.status == 400) {

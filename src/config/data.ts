@@ -58,19 +58,27 @@ export const provinces = [
   
 export const clothItems: ClothItem[] = [
   {
+    id: 0,
+    image: "1984_Hat_Front.png",
+    backImage: "1984_Hat_Back.png",
+    name: "1984 Hat",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    amount: 40.00,
+  },
+  {
     id: 1,
     image: "Rvr_Shirt_01_Front.png",
     backImage: "Rvr_Shirt_01_Back.png",
     name: "Mascot Camo Tee - Black",
-    sizes: ["M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     amount: 60.00,
   },
   {
     id: 2,
     image: "Rvr_Shirt_02_Front.png",
     backImage: "Rvr_Shirt_02_Back.png",
-    name: "Mascot Camo Tee - Brown",
-    sizes: ["M", "L", "XL", "XXL"],
+    name: "Mascot Camo Tee - Beige",
+    sizes: ["S", "M", "L", "XL", "XXL"],
     amount: 60.00,
   },
   {
@@ -78,7 +86,7 @@ export const clothItems: ClothItem[] = [
     image: "Rvr_Shirt_03_Front.png",
     backImage: "Rvr_Shirt_03_Back.png",
     name: "Moonwalk Tee - Brown",
-    sizes: ["M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     amount: 60.00,
   },
   {
@@ -86,7 +94,7 @@ export const clothItems: ClothItem[] = [
     image: "Rvr_Shirt_04_Front.png",
     backImage: "Rvr_Shirt_04_Back.png",
     name: "Moonwalk Tee - Black",
-    sizes: ["M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     amount: 60.00,
   },
   {
@@ -94,7 +102,7 @@ export const clothItems: ClothItem[] = [
     image: "Rvr_Shirt_05_Front.png",
     backImage: "Rvr_Shirt_05_Back.png",
     name: "A Rover Project - White",
-    sizes: ["M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     amount: 60.00,
   },
   {
@@ -102,16 +110,24 @@ export const clothItems: ClothItem[] = [
     image: "Rvr_Shirt_06_Front.png",
     backImage: "Rvr_Shirt_06_Back.png",
     name: "A Rover Project - Blue",
-    sizes: ["M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     amount: 60.00,
   },
   {
     id: 7,
-    image: "Rvr_Hoodie_Front.png",
-    backImage: "Rvr_Hoodie_Back.png",
+    image: "Rvr_Hoodie_Black_Front.png",
+    backImage: "Rvr_Hoodie_Black_Back.png",
     name: "Classic Rover Hoodie - Black",
-    sizes: ["M", "L", "XL", "XXL"],
-    amount: 120.00,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    amount: 100.00,
+  },
+  {
+    id: 8,
+    image: "Rvr_Hoodie_Tan_Front.png",
+    backImage: "Rvr_Hoodie_Tan_Back.png",
+    name: "Classic Rover Hoodie - Tan",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    amount: 100.00,
   },
 ];
 

@@ -38,6 +38,7 @@ export interface ClothItem {
     name: string;
     sizes: string[];
     amount: number;
+    isTbd?: boolean;
 }
 
 export const provinces = [
@@ -115,6 +116,15 @@ export const clothItems: ClothItem[] = [
   },
   {
     id: 7,
+    image: "Deep_Blue_Sea.jpeg",
+    backImage: "Deep_Blue_Sea.jpeg",
+    name: "Deep Blue Sea - Custom",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    isTbd: true,
+    amount: 0.00,
+  },
+  {
+    id: 8,
     image: "Rvr_Hoodie_Black_Front.png",
     backImage: "Rvr_Hoodie_Black_Back.png",
     name: "Classic Rover Hoodie - Black",
@@ -122,7 +132,7 @@ export const clothItems: ClothItem[] = [
     amount: 100.00,
   },
   {
-    id: 8,
+    id: 10,
     image: "Rvr_Hoodie_Tan_Front.png",
     backImage: "Rvr_Hoodie_Tan_Back.png",
     name: "Classic Rover Hoodie - Tan",

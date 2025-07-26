@@ -96,9 +96,15 @@ export default function ClothCard({clothItem, className} : {className?:string, c
                     <p className={`${roboto.className}`}>
                         {clothItem.name}
                     </p>
-                    <p className="border-b-2 border-red-600 ">
-                        ${clothItem.amount}.00
-                    </p>
+                    {clothItem?.isTbd ?
+                        <p className="border-b-2 border-red-600 ">
+                            $TBD
+                        </p> : 
+                        <p className="border-b-2 border-red-600 ">
+                            ${clothItem.amount}.00
+                        </p>
+                    }
+                    
                 </div>
 
                 <div className="flex flex-row w-full justify-between">

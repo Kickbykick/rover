@@ -25,6 +25,7 @@ import { provinces } from "@/config/data";
 import OrderDisplay from "./OrderDisplay";
 import { Separator } from "./ui/separator";
 import { Roboto } from "next/font/google";
+import Image from 'next/image'
 
 const roboto = Roboto({weight: "700", subsets: ["latin", "latin-ext"]});
 
@@ -75,13 +76,62 @@ export default function OrderSection({className}:{className?: string}) {
         }
     };
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
-        <section id="waitlist" className={className ?? "w-full py-12 md:py-24 lg:py-32 xl:py-48"}>
+        <section id="waitlist" className={className ?? "w-full py-12 md:py-24 lg:py-24 xl:py-24"}>
             <Toaster richColors/>
 
             <div className="px-2 md:px-4">
                 <div className="grid gap-6 items-center">
                     <div className="flex flex-col justify-center space-y-4 text-center">
+                        <div className="flex flex-col items-center mb-4">
+                            <h3 className={`break-all text-3xl ${roboto.className} font-bold min-h-[5rem] sm:text-5xl xl:text-4xl/none`}>
+                                Size Chart
+                            </h3>
+                            <button
+                                type="button"
+                                aria-label="Open size chart larger"
+                                className="focus:outline-none"
+                                onClick={() => setIsModalOpen(true)}
+                                style={{ background: 'none', border: 'none', padding: 0 }}
+                            >
+                                <Image src={`/images/size_chart.png`} width={1000}
+                                    height={1000}
+                                    quality={100} 
+                                    alt="Size Chart" className="rounded-lg max-w-full h-auto cursor-zoom-in"  />
+                            </button>
+                            {isModalOpen && (
+                                <div
+                                    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
+                                    onClick={() => setIsModalOpen(false)}
+                                >
+                                    <div
+                                        className="relative max-w-full max-h-full flex items-center justify-center p-2 sm:p-8"
+                                        onClick={e => e.stopPropagation()}
+                                    >
+                                        <button
+                                            className="absolute top-2 right-2 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center focus:outline-none"
+                                            onClick={() => setIsModalOpen(false)}
+                                            aria-label="Close size chart"
+                                        >
+                                            &times;
+                                        </button>
+                                        <div className="overflow-auto max-h-[90vh] max-w-[95vw] flex items-center justify-center">
+                                            <Image
+                                                src="/images/size_chart.png"
+                                                width={1000}
+                                                height={1000}
+                                                quality={100}
+                                                alt="Size Chart Zoomed"
+                                                className="rounded-lg w-auto h-auto max-h-[80vh] max-w-[90vw] object-contain"
+                                                style={{ touchAction: 'pan-x pan-y' }}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                         <div className="">
                             <h1 className={`break-all text-3xl ${roboto.className} font-bold min-h-[5rem] sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-500`}>
                                 Proceed To Submit Order
